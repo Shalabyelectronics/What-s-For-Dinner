@@ -96,7 +96,7 @@ h1.brand-text {
 }
 
 .custom-container {
-  --bs-gutter-x: 4.5rem;
+  --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 2rem;
 }
 
