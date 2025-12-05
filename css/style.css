@@ -606,6 +606,7 @@ h1.brand-text {
     var(--color-orange-500),
     var(--color-red-500)
   );
+  border: none;
   padding-inline: 1.5rem;
   padding-block: 0.75rem;
   border-radius: 1rem;
