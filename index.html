@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>What's For Dinner</title>
+  </head>
+  <body>
+    <!-- Navbar start here -->
+    <nav class="navbar custom-navbar custom-shadow navbar-expand-md">
+      <div class="container custom-container">
+        <div class="left-side navbar-brand">
+          <div
+            class="brand-container d-flex gap-2 justify-content-center align-items-center"
+          >
+            <div
+              class="brand-icon-wrapper d-flex justify-content-center align-items-center width-48 height-48 brand-bg-color rounded-circle"
+            >
+              <i class="fa-solid fa-utensils text-light"></i>
+            </div>
+            <div
+              class="brand-content d-flex flex-column justify-content-center gap-2"
+            >
+              <h1 class="brand-text fw-bolder black-color-500 pt-1">
+                What's For Dinner
+              </h1>
+              <span class="fs-12-14 gray-color-300 m-0 ps-1">
+                Your daily meal inspiration
+              </span>
+            </div>
+          </div>
+        </div>
+        <button
+          class="navbar-toggler custom-nav-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul
+            class="navbar-nav d-flex justify-content-start align-items-md-center ms-auto mb-2 mb-lg-0"
+          >
+            <li><hr class="nav-divider d-md-none" /></li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex justify-content-start align-items-center gap-2"
+                aria-current="page"
+                href="#"
+              >
+                <i class="fas fa-bookmark fs-20"></i>
+                <span class="d-md-none">Saved Recipes</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex justify-content-start align-items-center gap-2"
+                aria-current="page"
+                href="#"
+              >
+                <i class="fas fa-clock-rotate-left fs-20"></i>
+                <span class="d-md-none">Recent</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex justify-content-start align-items-center gap-2"
+                aria-current="page"
+                href="#"
+              >
+                <i class="fas fa-gear fs-20"></i>
+                <span class="d-md-none">Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link d-flex justify-content-start align-items-center gap-2"
+                aria-current="page"
+                href="#"
+              >
+                <div
+                  class="image-wrapper width-32-40 height-32-40 overflow-hidden rounded-circle profile-border"
+                >
+                  <img
+                    class="w-100"
+                    src="./images/avatar-4.jpg"
+                    alt="user profile image"
+                  />
+                </div>
+                <span class="d-md-none">Profile</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar end here -->
+    <!-- Dish card start here -->
+    <main class="">
+      <section class="random-dish-card container custom-container mt-4">
+        <div class="custom-card card my-3 shadow">
+          <div class="row g-0">
+            <!-- Dish image left side -->
+            <div class="col-lg-5 position-relative">
+              <img
+                src=""
+                class="img-card card-img-rounded"
+                alt=""
+                id="dishImage"
+              />
+              <!-- Rating Badge Component -->
+              <div
+                class="badge badge-bg-brand image-badge rounded-pill position-absolute top-0 start-0 m-3 py-2 px-3"
+                id="ratingBadge"
+              >
+                <i class="fas fa-star fs-14-16"></i>
+                <span
+                  class="dish-rate fs-14-16 fw-semibold"
+                  id="ratingNumber"
+                ></span>
+                <span
+                  class="dish-review gray-color-200 bg-navbar fs-12-14 fw-normal"
+                  >(<span id="reviewNumber"></span> reviews)</span
+                >
+              </div>
+              <!-- Dish time and serve table component -->
+              <div
+                class="badge badge-bg-brand image-badge d-flex justify-content-around align-items-center rounded-4 position-absolute bottom-0 start-50 translate-middle-x mb-3 py-3 px-4 w-85"
+                id="dishTimeServeTable"
+              >
+                <!-- First dish info -->
+                <div
+                  class="dish-info d-flex flex-column gap-2 align-items-center justify-content-center"
+                >
+                  <i class="fas fa-clock brand-color fs-18-24"></i>
+                  <span
+                    class="dish-review gray-color-200 bg-navbar fs-12-14 fw-normal"
+                    >Prep Time</span
+                  >
+                  <span class="dish-rate fs-14-16 fw-bold"
+                    ><span id="prepTime"></span> min</span
+                  >
+                </div>
+                <!-- Second dish info -->
+                <div
+                  class="dish-info d-flex flex-column gap-2 align-items-center justify-content-center"
+                >
+                  <i class="fas fa-fire-burner orange-color fs-18-24"></i>
+                  <span
+                    class="dish-review gray-color-200 bg-navbar fs-12-14 fw-normal"
+                    >Cook Time</span
+                  >
+                  <span class="dish-rate fs-14-16 fw-bold">
+                    <span id="cookTime"></span> min</span
+                  >
+                </div>
+                <!-- Thired dish info -->
+                <div
+                  class="dish-info d-flex flex-column gap-2 align-items-center justify-content-center"
+                >
+                  <i class="fas fa-users text-primary fs-18-24"></i>
+                  <span
+                    class="dish-review gray-color-200 bg-navbar fs-12-14 fw-normal"
+                    >Servings</span
+                  >
+                  <span class="dish-rate fs-14-16 fw-bold"
+                    ><span id="serveNum"></span> people</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Dish info right side -->
+            <div class="col-lg-7 card-right-side">
+              <div class="inner p-lg-40">
+                <!-- This row contain two sides card header and card title -->
+                <div class="row g-0">
+                  <!-- Card header contain bookmark and share buttons -->
+                  <div
+                    class="col-md-4 order-md-1 card-header custom-card-header d-flex justify-content-end align-items-end"
+                  >
+                    <button class="btn card-header-btn me-2">
+                      <i class="fas fa-bookmark"></i>
+                    </button>
+                    <button class="btn card-header-btn">
+                      <i class="fas fa-share-nodes"></i>
+                    </button>
+                  </div>
+                  <!-- Card title a description -->
+                  <div class="col-md-8 order-md-0 p-3">
+                    <!-- Dish difficalties and type badge component -->
+                    <div class="dish-badges mb-2" id="dishDiffTypeCom">
+                      <span
+                        class="badge bg-empty dish-info-badge rounded-pill"
+                        id="difficaltyType"
+                      ></span>
+                      <span
+                        class="badge empty-food dish-info-badge rounded-pill"
+                        id="dishType"
+                      ></span>
+                    </div>
+
+                    <h2 class="card-title fs-24-36 fw-bold" id="dishName"></h2>
+                    <p
+                      class="card-text fs-14-18 gray-color-300"
+                      id="dishDescription"
+                    ></p>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <!-- Dish flag component have two status warning and attention that appears when the dish will take too much time to prepare or need special enviroment-->
+                  <div
+                    class="warning-dish-info dish-flag-info p-3 rounded-1 d-flex justify-content-start align-items-center gap-12 rounded-2 d-none"
+                    id="dishFlagCom"
+                  >
+                    <div class="dish-info-icon">
+                      <i
+                        class="fas fa-triangle-exclamation fs-20"
+                        id="dishFlagIcon"
+                      ></i>
+                    </div>
+                    <div class="dish-info-content">
+                      <h3
+                        class="dish-info-title fs-14-16 fw-semibold"
+                        id="dishFlagTitle"
+                      >
+                        Extended Preparation Time
+                      </h3>
+                      <p
+                        class="dish-info-details fs-12-14 m-0"
+                        id="dishFlagDesc"
+                      >
+                        This recipe requires more than 45 minutes to prepare.
+                        Plan accordingly!
+                      </p>
+                    </div>
+                  </div>
+                  <!-- Navs and tabs -->
+                  <nav>
+                    <div
+                      class="nav nav-tabs nav-tabs p-0 my-3 justify-content-around flex-nowrap gap-1"
+                      id="nav-tab"
+                      role="tablist"
+                    >
+                      <button
+                        class="nav-link nav-link active fw-semibold fs-12-16 d-flex justify-content-start align-items-center px-xl-3 gap-1"
+                        id="nav-ingredients-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#nav-ingredients"
+                        type="button"
+                        role="tab"
+                        aria-controls="nav-ingredients"
+                        aria-selected="true"
+                      >
+                        <i class="fas fa-list-check"></i>
+                        Ingredients
+                      </button>
+                      <button
+                        class="nav-link nav-link fw-semibold fs-12-16 d-flex justify-content-start align-items-center px-xl-3 gap-1"
+                        id="nav-instructions-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#nav-instructions"
+                        type="button"
+                        role="tab"
+                        aria-controls="nav-instructions"
+                        aria-selected="false"
+                      >
+                        <i class="fas fa-book-open"></i>
+                        Instructions
+                      </button>
+                      <button
+                        class="nav-link nav-link fw-semibold fs-12-16 d-flex justify-content-start align-items-center gap-1 px-xl-3"
+                        id="nav-nutrition-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#nav-nutrition"
+                        type="button"
+                        role="tab"
+                        aria-controls="nav-nutrition"
+                        aria-selected="false"
+                      >
+                        <i class="fas fa-chart-pie"></i>
+                        Nutrition
+                      </button>
+                      <button
+                        class="nav-link nav-link fw-semibold fs-12-16 d-flex justify-content-strat align-items-center px-xl-3 gap-1"
+                        id="nav-chief-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#nav-chief"
+                        type="button"
+                        role="tab"
+                        aria-controls="nav-chief"
+                        aria-selected="false"
+                      >
+                        <i class="fas fa-lightbulb"></i>
+                        Chef's Tips
+                      </button>
+                    </div>
+                  </nav>
+                  <!-- Divider -->
+                  <hr class="nav-tabs-divider nav-divider" />
+                  <div class="tab-content" id="nav-tabContent">
+                    <!-- Ingredient tab content -->
+                    <div
+                      class="tab-pane fade show active"
+                      id="nav-ingredients"
+                      role="tabpanel"
+                      aria-labelledby="nav-ingredients-tab"
+                      tabindex="0"
+                    >
+                      <div class="content-container scroll-y-auto">
+                        <div class="content-wrapper">
+                          <ul
+                            class="ingredients-list list-group list-group-numbered"
+                          ></ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Instruction tab content -->
+                    <div
+                      class="tab-pane fade"
+                      id="nav-instructions"
+                      role="tabpanel"
+                      aria-labelledby="nav-instructions-tab"
+                      tabindex="0"
+                    >
+                      <div class="content-container scroll-y-auto">
+                        <div class="content-wrapper">
+                          <ul
+                            class="instructions-list list-group list-group-numbered"
+                          ></ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Nutrition tab content -->
+                    <div
+                      class="tab-pane fade"
+                      id="nav-nutrition"
+                      role="tabpanel"
+                      aria-labelledby="nav-nutrition-tab"
+                      tabindex="0"
+                    >
+                      <div class="content-container scroll-y-auto">
+                        <div class="content-wrapper">
+                          <div class="row g-0">
+                            <!-- calory -->
+                            <div class="col-md-6">
+                              <div class="inner p-2">
+                                <div class="nutrition-box">
+                                  <div class="left-side">
+                                    <div class="calory icon-wrapper me-2 me-2">
+                                      <i class="fas fa-fire"></i>
+                                    </div>
+                                    <span class="type">Calories</span>
+                                  </div>
+                                  <div class="right-side">
+                                    <p class="unit m-0" id="caloryUnit"></p>
+                                    <span>kcal</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- protein -->
+                            <div class="col-md-6">
+                              <div class="inner p-2">
+                                <div class="nutrition-box">
+                                  <div class="left-side">
+                                    <div class="protein icon-wrapper me-2">
+                                      <i class="fas fa-dumbbell"></i>
+                                    </div>
+                                    <span class="type">Protein</span>
+                                  </div>
+                                  <div class="right-side">
+                                    <p class="unit m-0" id="proteinUnit"></p>
+                                    <span>g</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- carbs -->
+                            <div class="col-md-6">
+                              <div class="inner p-2">
+                                <div class="nutrition-box">
+                                  <div class="left-side">
+                                    <div class="carbs icon-wrapper me-2">
+                                      <i class="fas fa-wheat-awn"></i>
+                                    </div>
+                                    <span class="type">Carbohydrates</span>
+                                  </div>
+                                  <div class="right-side">
+                                    <p class="unit m-0" id="carbsUnit"></p>
+                                    <span>g</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- fat -->
+                            <div class="col-md-6">
+                              <div class="inner p-2">
+                                <div class="nutrition-box">
+                                  <div class="left-side">
+                                    <div class="fat icon-wrapper me-2">
+                                      <i class="fas fa-tint"></i>
+                                    </div>
+                                    <span class="type">Fat</span>
+                                  </div>
+                                  <div class="right-side">
+                                    <p class="unit m-0" id="fatUnit"></p>
+                                    <span>g</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- fiber -->
+                            <div class="col-md-6">
+                              <div class="inner p-2">
+                                <div class="nutrition-box">
+                                  <div class="left-side">
+                                    <div class="fiber icon-wrapper me-2">
+                                      <i class="fas fa-seedling"></i>
+                                    </div>
+                                    <span class="type">Fiber</span>
+                                  </div>
+                                  <div class="right-side">
+                                    <p class="unit m-0" id="fiberUnit"></p>
+                                    <span>g</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- sodium -->
+                            <div class="col-md-6">
+                              <div class="inner p-2">
+                                <div class="nutrition-box">
+                                  <div class="left-side">
+                                    <div class="sodium icon-wrapper me-2">
+                                      <i class="fas fa-cube"></i>
+                                    </div>
+                                    <span class="type">Sodium</span>
+                                  </div>
+                                  <div class="right-side">
+                                    <p class="unit m-0" id="sodiumUnit"></p>
+                                    <span>mg</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Chief tips tab content -->
+                    <div
+                      class="tab-pane fade"
+                      id="nav-chief"
+                      role="tabpanel"
+                      aria-labelledby="nav-chief-tab"
+                      tabindex="0"
+                    >
+                      <div class="content-container">
+                        <div class="content-wrapper scroll-y-auto">
+                          <ul class="chief-list list-group"></ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Navs end here -->
+                  <!-- Divider -->
+                  <hr class="nav-tabs-divider nav-divider" />
+                  <button
+                    class="btn d-flex justify-content-center align-items-center gap-2"
+                    id="tryAnotherRecipeBtn"
+                  >
+                    <i class="fas fa-rotate"></i>
+                    Try Another Recipe
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Dis card end here -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/dishes.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,671 @@
+
+/* --- Nunito Font --- */
+@font-face {
+  font-family: "Nunito";
+  src: url(../fonts/Nunito.woff2);
+}
+
+/* Global */
+
+:root {
+  /* Colors */
+  --color-brand: rgb(255, 84, 13);
+  --color-orang: #fb2c36;
+  --color-orange-50: oklch(98% 0.016 73.684);
+  --color-orange-100: #ffedd4;
+  --color-orange-200: #ffd6a7;
+  --color-orange-300: #fff9ec;
+  --color-orange-500: oklch(70.5% 0.213 47.604);
+  --color-orange-600: oklch(64.6% 0.222 41.116);
+  --color-black-500: #101828;
+  --color-gray-50: oklch(98.5% 0.002 247.839);
+  --color-gray-200: #6a7282c6;
+  --color-gray-300: #6a7282;
+  --color-gray-400: #4a5565;
+  --color-yellow-50: oklch(98.7% 0.026 102.212);
+  --color-yellow-500: #fdc700;
+  --color-bg-navbar: #ffffff;
+  --color-nav-border: #f8ecdd;
+  --color-green-100: oklch(96.2% 0.044 156.743);
+  --color-green-600: oklch(62.7% 0.194 149.214);
+  --color-green-700: oklch(52.7% 0.154 150.069);
+  --color-blue-100: oklch(93.2% 0.032 255.585);
+  --color-blue-500: oklch(62.3% 0.214 259.815);
+  --color-blue-600: oklch(54.6% 0.245 262.881);
+  --color-blue-700: oklch(48.8% 0.243 264.376);
+  --color-red-50: oklch(97.1% 0.013 17.38);
+  --color-red-100: oklch(93.6% 0.032 17.717);
+  --color-red-500: oklch(63.7% 0.237 25.331);
+  --color-red-600: oklch(57.7% 0.245 27.325);
+  --color-red-800: oklch(44.4% 0.177 26.899);
+  --color-scrollbar-thumb: oklch(75% 0.15 35 / 0.3);
+  --color-amber-50: oklch(98.7% 0.022 95.277);
+  --color-amber-600: oklch(66.6% 0.179 58.318);
+  --color-amber-400: oklch(82.8% 0.189 84.429);
+
+  /* Blue (Protein) */
+  --color-blue-100: #dbeafe;
+  --color-blue-600: #2563eb;
+
+  /* Yellow (Carbohydrates) */
+  --color-yellow-100: #fef9c3;
+  --color-yellow-600: #ca8a04;
+
+  /* Red (Fat) */
+  --color-red-100: #fee2e2;
+  --color-red-600: #dc2626;
+
+  /* Green (Fiber) */
+  --color-green-100: #dcfce7;
+  --color-green-600: #16a34a;
+
+  /* Pink (Sodium) */
+  --color-pink-100: #fce7f3;
+  --color-pink-600: #db2777;
+  /* Test an Idea */
+  --font-const: 0.25rem;
+  --bs-box-shadow: 1rem 5rem 10rem orange;
+
+  /* Spacer */
+  --spacer: 0.25rem;
+}
+::selection {
+  background-color: var(--color-brand);
+  color: #fff;
+}
+
+html {
+  scroll-padding-top: 3.125rem;
+}
+
+body {
+  font-family: Nunito, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-orange-50),
+    var(--color-amber-50),
+    var(--color-yellow-50)
+  );
+}
+
+h1.brand-text {
+  font-size: clamp(1.125rem, 1vw + 1rem, 1.5rem);
+  margin: 0;
+  line-height: 0.5;
+}
+
+.custom-container {
+  --bs-gutter-x: 4.5rem;
+  --bs-gutter-y: 2rem;
+}
+
+.custom-shadow {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+/* Navbar */
+
+.custom-navbar {
+  --bs-navbar-color: var(--color-gray-400);
+  --bs-navbar-hover-color: var(--color-brand);
+  --bs-navbar-padding-y: 1rem;
+  --bs-navbar-toggler-font-size: 1.5rem;
+  background-color: #fff;
+  border-bottom: 3.5px solid var(--color-nav-border);
+}
+
+.custom-nav-toggler {
+  border: none;
+}
+.custom-nav-toggler > i {
+  transition: color 0.2s ease-in-out;
+}
+.custom-nav-toggler:hover > i {
+  color: var(--color-brand);
+}
+.custom-nav-toggler:focus {
+  box-shadow: none;
+}
+
+.nav-divider {
+  height: 0;
+  margin: 1rem 0;
+  overflow: hidden;
+  border-top: 0.031rem solid var(--color-brand);
+  opacity: 0.2;
+}
+.nav-tabs-divider {
+  --color-brand: var(--color-gray-200);
+}
+.profile-border {
+  border: calc(var(--spacer) * 0.5) solid var(--color-brand);
+}
+
+.bg-navbar {
+  background-color: var(--bs-navbar-color);
+}
+
+.brand-color {
+  color: var(--color-brand);
+}
+.orange-color {
+  color: var(--color-orang);
+}
+.orange-bg-color {
+  color: var(--color-orange-100);
+}
+.brand-bg-color {
+  background-color: var(--color-brand);
+}
+.gray-bg-color-50 {
+  background-color: var(--color-gray-50);
+}
+
+.amber-bg-50 {
+  background-color: var(--color-amber-50);
+}
+
+.amber-color-600 {
+  color: var(--color-amber-600);
+}
+
+.black-color-500 {
+  color: var(--color-black-500);
+}
+.gray-color-300 {
+  color: var(--color-gray-300);
+}
+.gray-color-200 {
+  color: var(--color-gray-200);
+}
+.gray-color-400 {
+  color: var(--color-gray-400);
+}
+
+.red-color-100 {
+  color: var(--color-red-100);
+}
+.red-bg-50 {
+  background-color: var(--color-red-50);
+}
+.red-bg-100 {
+  background-color: var(--color-red-100);
+}
+.red-color-500 {
+  color: var(--color-red-500);
+}
+.red-color-600 {
+  color: var(--color-red-600);
+}
+.red-color-800 {
+  color: var(--color-red-800);
+}
+
+/* Width and height */
+
+.width-32-40 {
+  width: clamp(2rem, 2vw + 1.4rem, 2.5rem);
+}
+.height-32-40 {
+  height: clamp(2rem, 2vw + 1.4rem, 2.5rem);
+}
+.width-48 {
+  width: calc(var(--spacer) * 12);
+}
+.height-48 {
+  height: calc(var(--spacer) * 12);
+}
+
+.w-85 {
+  width: 85%;
+}
+/* Gap */
+.gap-12 {
+  gap: 0.75rem;
+}
+/* Margin */
+.mb-12 {
+  margin-bottom: 0.75rem;
+}
+/* Padding */
+.p-20 {
+  padding: 1.25rem;
+}
+
+/* Font size */
+.fs-7 {
+  font-size: 0.875rem;
+}
+
+.fs-20 {
+  font-size: calc(var(--font-const) * 5);
+}
+.fs-12-14 {
+  font-size: clamp(0.75rem, 0.66rem + 0.45vw, 0.875rem);
+}
+.fs-12-16 {
+  font-size: clamp(0.75rem, 0.57rem + 0.89vw, 1rem);
+}
+
+.fs-16-20 {
+  font-size: clamp(1rem, 0.82rem + 0.89vw, 1.25rem);
+}
+
+.fs-14-16 {
+  font-size: clamp(0.875rem, 0.79rem + 0.45vw, 1rem);
+}
+
+.fs-14-18 {
+  font-size: clamp(0.875rem, 0.7rem + 0.89vw, 1.125rem);
+}
+
+.fs-18-24 {
+  font-size: clamp(1.125rem, 0.86rem + 1.34vw, 1.5rem);
+}
+
+.fs-24-36 {
+  font-size: clamp(1.5rem, 0.96rem + 2.68vw, 2.25rem);
+}
+
+/* Card component */
+
+.custom-card {
+  --bs-border-radius: 1.5rem;
+  --bs-card-border-radius: var(--bs-border-radius);
+  overflow: hidden;
+}
+
+/* Rounded */
+.card-img-rounded {
+  border-top-left-radius: var(--bs-border-radius);
+  border-top-right-radius: var(--bs-border-radius);
+}
+
+.img-card {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.badge-bg-brand {
+  background-color: var(--color-bg-navbar);
+}
+
+.image-badge {
+  --bs-badge-color: var(--color-black-500);
+}
+
+.image-badge > i {
+  color: var(--color-yellow-500);
+}
+
+.custom-card-header {
+  padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
+  margin-bottom: 0;
+  color: var(--bs-card-cap-color);
+  background-color: var(--bs-navbar-color);
+  border-bottom: none;
+}
+
+.card-header-btn {
+  --bs-btn-padding-x: 0;
+  --bs-btn-padding-y: 0;
+  --bs-btn-color: var(--color-brand);
+  --bs-btn-bg: var(--color-orange-100);
+  --bs-btn-hover-color: var(--color-brand);
+  --bs-btn-hover-bg: var(--color-orange-200);
+  border-radius: 0.75rem;
+  width: 3rem;
+  height: 3rem;
+}
+
+.card-header-btn:hover {
+  background-color: var(--bs-btn-hover-bg);
+  border-color: var(--bs-btn-hover-border-color);
+}
+
+/* Badgeses */
+.dish-info-badge {
+  padding-block: 0.35em;
+  padding-inline: 0.85em;
+}
+/* Difficalties */
+.bg-easy {
+  --bs-badge-color: var(--color-green-700);
+  background-color: var(--color-green-100);
+}
+.bg-hard {
+  --bs-badge-color: var(--color-red-800);
+  background-color: var(--color-red-100);
+}
+/* Food Type */
+.sea-food {
+  --bs-badge-color: var(--color-blue-700);
+  background-color: var(--color-blue-100);
+}
+
+.grill-food {
+  --bs-badge-color: var(--color-pink-600);
+  background-color: var(--color-pink-100);
+}
+
+.salad-food {
+    --bs-badge-color: var(--color-green-700);
+  background-color: var(--color-green-100);
+}
+.pasta-food {
+    --bs-badge-color: var(--color-yellow-600);
+  background-color: var(--color-yellow-100);
+}
+/*Dish info */
+.dish-flag-info {
+  --bs-border-radius: 0.5rem;
+  border-left: 4px solid var(--border-color);
+}
+
+/* Dish info status */
+
+.warning-dish-info {
+  --border-color: var(--color-red-500);
+  background-color: var(--color-red-50);
+  --icon-color: var(--color-red-500);
+  --title-color: var(--color-red-800);
+  --paragraph-color: var(--color-red-600);
+}
+
+.warning-dish-info > .dish-info-icon > i {
+  color: var(--icon-color);
+}
+.warning-dish-info > .dish-info-content > h3 {
+  color: var(--title-color);
+}
+.warning-dish-info > .dish-info-content > p {
+  color: var(--paragraph-color);
+}
+.attention-dish-info {
+  --border-color: var(--color-yellow-600);
+  background-color: var(--color-yellow-50);
+  --icon-color: var(--color-yellow-600);
+  --title-color: var(--color-yellow-600);
+  --paragraph-color: var(--color-yellow-600);
+}
+
+.attention-dish-info > .dish-info-icon > i {
+  color: var(--icon-color);
+}
+.attention-dish-info > .dish-info-content > h3 {
+  color: var(--title-color);
+}
+.attention-dish-info > .dish-info-content > p {
+  color: var(--paragraph-color);
+}
+
+/* Chef box border */
+.chef-border {
+  --border-color: var(--color-amber-400);
+}
+
+/* Navs and tabs */
+.nav-tabs {
+  --bs-nav-tabs-link-active-color: var(--color-brand);
+  border-bottom: none;
+}
+.nav-tabs .nav-link {
+  padding: 0;
+  padding-bottom: 0.35rem;
+  border: 0;
+  border-bottom: 0.15rem solid transparent;
+  border-radius: 0;
+  color: var(--color-gray-300);
+}
+
+.nav-tabs .nav-link:not(.active):focus,
+.nav-tabs .nav-link:not(.active):hover {
+  color: var(--color-black-500);
+  border-bottom: 0.15rem solid transparent;
+}
+
+.nav-tabs .nav-link.active {
+  --bs-btn-active-border-color: var(--color-brand);
+  border-color: var(--color-brand);
+}
+
+/* Ingriadient tab */
+.content-container {
+  border-radius: 0.375rem;
+}
+
+.scroll-y-auto {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-orange-200) var(--color-orange-100);
+}
+
+/* Standard Hover (Firefox) */
+.scroll-y-auto:hover {
+  scrollbar-color: var(--color-orange-200) var(--color-orange-100);
+}
+
+/* WebKit Syntax (Chrome, Edge, Safari) - Fixes the gray default hover */
+.scroll-y-auto::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-y-auto::-webkit-scrollbar-track {
+  background: var(--color-orange-100);
+}
+
+.scroll-y-auto::-webkit-scrollbar-thumb {
+  background-color: var(--color-orange-200);
+  border-radius: 20px;
+}
+
+.scroll-y-auto::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-orange-300);
+}
+
+/* ----- */
+
+.content-container > .content-wrapper {
+  height: 21.875rem;
+}
+
+.instructions-list > .list-group-item,
+.ingredients-list > .list-group-item {
+  border: 0;
+  --bs-list-group-bg: var(--color-orange-300);
+  padding-top: 1rem;
+}
+
+.ingredients-list > .list-group-item {
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.ingredients-list > .list-group-item::before {
+  content: counters(section, ".") " ";
+  counter-increment: section;
+  background-color: var(--color-brand);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 600;
+  margin-right: 0.75rem;
+}
+.instructions-list > .list-group-item {
+  --bs-list-group-bg: #fff;
+}
+.instructions-list > .list-group-item::before {
+  content: counters(section, ".") " ";
+  counter-increment: section;
+  background-color: var(--color-brand);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 1rem;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+}
+
+.chief-list > .list-group-item {
+  --bs-list-group-bg: var(--color-amber-50);
+  border: 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: var(--color-black-500);
+  font-size: clamp(0.875rem, 0.79rem + 0.45vw, 1rem);
+  padding: 1rem;
+}
+.chief-list > .list-group-item::before {
+  content: "\f058";
+  font-family: "Font Awesome 5 Free";
+  color: var(--color-amber-600);
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+}
+
+/* Nutrition tab */
+.nutrition-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-gray-50);
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+.nutrition-box > .right-side,
+.nutrition-box > .left-side {
+  display: flex;
+  align-items: center;
+  font-size: clamp(0.75rem, 0.57rem + 0.89vw, 1rem);
+  font-weight: 500;
+}
+.nutrition-box > .right-side {
+  font-size: clamp(1rem, 0.82rem + 0.89vw, 1.25rem);
+  font-weight: 700;
+}
+.nutrition-box > .left-side > .icon-wrapper {
+  width: 40px;
+  height: 40px;
+  background-color: var(--nutrition-bg-color);
+  color: var(--nutrition-color);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Nutrition badges specific styles */
+.calory {
+  --nutrition-bg-color: var(--color-orange-100);
+  --nutrition-color: var(--color-brand);
+}
+
+.protein {
+  --nutrition-bg-color: var(--color-blue-100);
+  --nutrition-color: var(--color-blue-600);
+}
+
+.carbs {
+  --nutrition-bg-color: var(--color-yellow-100);
+  --nutrition-color: var(--color-yellow-600);
+}
+
+.fat {
+  --nutrition-bg-color: var(--color-red-100);
+  --nutrition-color: var(--color-red-600);
+}
+
+.fiber {
+  --nutrition-bg-color: var(--color-green-100);
+  --nutrition-color: var(--color-green-600);
+}
+
+.sodium {
+  --nutrition-bg-color: var(--color-pink-100);
+  --nutrition-color: var(--color-pink-600);
+}
+
+/* ------------------------------ */
+
+/* Try another recipe button */
+
+#tryAnotherRecipeBtn {
+  background-image: linear-gradient(
+    to right,
+    var(--color-orange-500),
+    var(--color-red-500)
+  );
+  padding-inline: 1.5rem;
+  padding-block: 0.75rem;
+  border-radius: 1rem;
+  color: #fff;
+  font-weight: 700;
+  transition: all 0.1s ease-in-out;
+}
+
+#tryAnotherRecipeBtn:hover {
+    background-image: linear-gradient(
+    to right,
+    var(--color-orange-600),
+    var(--color-red-600)
+  );
+  box-shadow: 0 5px 16px 1px var(--color-gray-200);
+  transform: scale(1.01);
+}
+
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 992px) {
+  .card-right-side {
+    height: 750px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-orange-200) #f1f1f1;
+    transition: scrollbar-color 0.2s ease-in-out;
+  }
+
+  /* Standard Hover (Firefox) */
+  .card-right-side:hover {
+    scrollbar-color: var(--color-orange-200) var(--color-orange-100);
+  }
+
+  /* WebKit Syntax (Chrome, Edge, Safari) - Fixes the gray default hover */
+  .card-right-side::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .card-right-side::-webkit-scrollbar-track {
+    background: var(--color-orange-100);
+  }
+
+  .card-right-side::-webkit-scrollbar-thumb {
+    background-color: var(--color-orange-200);
+    border-radius: 20px;
+  }
+
+  .card-right-side::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-orange-300);
+  }
+
+  .card-img-rounded {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: var(--bs-border-radius);
+  }
+  .img-card {
+    height: 100%;
+  }
+  .p-lg-40 {
+    padding: 0.75rem;
+  }
+}
