@@ -72,7 +72,7 @@ function createListElements(mainListContainer, listArr, innerTag) {
       innerTagEle.textContent = listArr[i];
       listItemEle.append(innerTagEle);
     } else {
-      console.log("There is no inner tag")
+      console.log("There is no inner tag");
       listItemEle.textContent = listArr[i];
     }
     mainListContainer.append(listItemEle);
@@ -163,7 +163,7 @@ function mainApp(dishesArr) {
   instructionsList.innerHTML = "";
   chiefList.innerHTML = "";
   // Second create and add new elements in each list
-  createListElements(ingredientList, randomDishObj.ingredientList);
+  createListElements(ingredientList, randomDishObj.ingredientList, "p");
   createListElements(instructionsList, randomDishObj.instructionsList, "p");
   createListElements(chiefList, randomDishObj.chiefList);
 

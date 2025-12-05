@@ -480,6 +480,8 @@ h1.brand-text {
 .ingredients-list > .list-group-item {
   margin-bottom: 0.5rem;
   border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
 }
 
 .ingredients-list > .list-group-item::before {
@@ -501,7 +503,7 @@ h1.brand-text {
   display: flex;
   align-items: center;
 }
-
+.ingredients-list > .list-group-item > p,
 .instructions-list > .list-group-item > p {
   margin: 0;
 }
