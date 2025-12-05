@@ -499,6 +499,7 @@ h1.brand-text {
 }
 .instructions-list > .list-group-item {
   --bs-list-group-bg: #fff;
+  display: flex;
 }
 .instructions-list > .list-group-item::before {
   content: counters(section, ".") " ";
@@ -507,7 +508,7 @@ h1.brand-text {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 48px;
+  flex: 0 0 48px;
   height: 48px;
   border-radius: 1rem;
   color: #ffffff;

@@ -62,11 +62,19 @@ function searchForClass(classListArr, regRexPattern) {
 }
 
 // Now I'm going to create a function that will take an array and a list element where I want to place those item to.
-function createListElements(mainListContainer, listArr) {
+function createListElements(mainListContainer, listArr, innerTag) {
   for (var i = 0; i < listArr.length; i++) {
     var listItemEle = document.createElement("li");
     listItemEle.classList.add("list-group-item");
-    listItemEle.textContent = listArr[i];
+
+    if (innerTag) {
+      var innerTagEle = document.createElement(innerTag);
+      innerTagEle.textContent = listArr[i];
+      listItemEle.append(innerTagEle);
+    } else {
+      console.log("There is no inner tag")
+      listItemEle.textContent = listArr[i];
+    }
     mainListContainer.append(listItemEle);
   }
 }
@@ -91,7 +99,6 @@ function checkDishFlagStatus(dishObj) {
     dishFlagDesc.innerHTML = dishObj.flagInfo.flagDescription;
     dishFlagCom.classList.remove("d-none");
   } else {
-    
     dishFlagCom.classList.add("d-none");
   }
 }
@@ -157,7 +164,7 @@ function mainApp(dishesArr) {
   chiefList.innerHTML = "";
   // Second create and add new elements in each list
   createListElements(ingredientList, randomDishObj.ingredientList);
-  createListElements(instructionsList, randomDishObj.instructionsList);
+  createListElements(instructionsList, randomDishObj.instructionsList, "p");
   createListElements(chiefList, randomDishObj.chiefList);
 
   // 8- Edit Nutrition tab content
